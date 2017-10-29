@@ -16,57 +16,65 @@ public class ProgramaDAOTests {
 
     @Autowired
     ProgramaDAO programaDAO;
-
+    
     @Test
     public void verifyList() {
 
         List<Programa> programas = programaDAO.list();
         for (Programa programa : programas) {
+            System.out.println(programa.getId());
             System.out.println(programa.getNombre());
         }
         Assert.assertTrue(programas.size() > 0);
     }
+    /*
 
     @Test
     public void verifyFind() {
-        Programa programa = programaDAO.get(1l);
+        Programa programa = programaDAO.get(38l);
+        System.out.println(programa.getId());
         System.out.println(programa.getNombre());
-        Assert.assertTrue(programa.getId() == 1l);
+        Assert.assertTrue(programa.getId() == 38l);
     }
-
+   */  /* 
     @Test
     public void verifySave() {
 
         Programa programa = new Programa();
-        programa.setCodigo("1020");
-        programa.setNombre("Nuevo Programa");
+        programa.setCodigo("9999");
+        programa.setNombre("Prueba programa 99999");
         programa.setDescripcion("......");
 
         programaDAO.save(programa);
         Assert.assertTrue(programa.getId() != null);
     }
-
+   
+    
     @Test
     public void verifyUpdate() {
 
         // cambiar el código para validar
         Programa programa = new Programa();
-        programa.setId(1l);
-        programa.setCodigo("999");
-        programa.setNombre("Programa Modificado");
+        programa.setId(38l);
+        programa.setCodigo("99999");
+        programa.setNombre("Programa PRUEBA 2");
 
         programaDAO.update(programa);
-        Assert.assertTrue(programaDAO.get(1l).getCodigo().equals("999"));
+        Assert.assertTrue(programaDAO.get(38l).getCodigo().equals("99999"));
     }
-
+    
+     */
+    
     @Test
     public void verifyDelete() {
 
         Programa programa = new Programa();
-        programa.setId(3l);
+        programa.setId(42l);
         programaDAO.delete(programa);
 
-        Assert.assertTrue(programaDAO.get(3l) == null);
+        Assert.assertTrue(programaDAO.get(42l) == null);
     }
+    
+    
 
 }
